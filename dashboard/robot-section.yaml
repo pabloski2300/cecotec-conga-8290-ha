@@ -1,0 +1,48 @@
+# Sección para una vista de tipo "sections" de Home Assistant.
+# Pegar dentro de `sections:` en el editor YAML del panel.
+# Los entity_id asumen que la entrada de tuya_local se llamó "Conga" y que el
+# selector de aspirar/fregar se renombró a select.conga_aspirar_o_fregar.
+type: grid
+cards:
+  - type: heading
+    heading: Robot aspirador
+    icon: mdi:robot-vacuum
+    heading_style: title
+    badges:
+      - type: entity
+        entity: sensor.conga_bateria
+        show_state: true
+        show_icon: true
+        color: state
+  - type: tile
+    entity: vacuum.conga
+    name: Conga
+    grid_options:
+      columns: 12
+      rows: auto
+    features:
+      - type: vacuum-commands
+        commands: [start_pause, stop, return_home, locate]
+    features_position: bottom
+  - type: tile
+    entity: select.conga_aspirar_o_fregar
+    name: Aspirar o fregar
+    grid_options: { columns: 6, rows: auto }
+    features:
+      - type: select-options
+    features_position: bottom
+  - type: tile
+    entity: select.conga_fregado
+    name: Agua al fregar
+    grid_options: { columns: 6, rows: auto }
+    features:
+      - type: select-options
+    features_position: bottom
+  - type: tile
+    entity: binary_sensor.conga_problema
+    name: Averías
+    grid_options: { columns: 6, rows: auto }
+  - type: tile
+    entity: button.conga_vaciar_deposito
+    name: Vaciar depósito
+    grid_options: { columns: 6, rows: auto }

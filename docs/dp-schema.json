@@ -1,0 +1,1031 @@
+[
+ {
+  "code": "switch_go",
+  "iconname": "icon-power",
+  "id": 1,
+  "mode": "rw",
+  "name": "清扫开关",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "pause",
+  "iconname": "icon-dp_pause",
+  "id": 2,
+  "mode": "rw",
+  "name": "暂停/继续",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "switch_charge",
+  "iconname": "icon-a_power",
+  "id": 3,
+  "mode": "rw",
+  "name": "回充开关",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "mode",
+  "iconname": "icon-dp_mode",
+  "id": 4,
+  "mode": "rw",
+  "name": "工作模式",
+  "property": {
+   "range": [
+    "smart",
+    "zone",
+    "pose",
+    "select_room",
+    "game",
+    "manual"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "status",
+  "iconname": "icon-zhuangtai",
+  "id": 5,
+  "mode": "ro",
+  "name": "机器状态:",
+  "property": {
+   "range": [
+    "standby",
+    "smart",
+    "zone_clean",
+    "paused",
+    "goto_pos",
+    "pos_arrived",
+    "pos_unarrive",
+    "goto_charge",
+    "charging",
+    "charge_done",
+    "sleep",
+    "select_room",
+    "part_clean",
+    "game",
+    "mapping",
+    "collecting_dust",
+    "manual"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "clean_time",
+  "iconname": "icon-dp_time3",
+  "id": 6,
+  "mode": "ro",
+  "name": "清扫时间",
+  "property": {
+   "unit": "min",
+   "min": 0,
+   "max": 9999,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "clean_area",
+  "iconname": "icon-icon-test10",
+  "id": 7,
+  "mode": "ro",
+  "name": "清扫面积",
+  "property": {
+   "unit": "㎡",
+   "min": 0,
+   "max": 9999,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "battery_percentage",
+  "iconname": "icon-dp_battery",
+  "id": 8,
+  "mode": "ro",
+  "name": "剩余电量",
+  "property": {
+   "unit": "%",
+   "min": 0,
+   "max": 100,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "suction",
+  "iconname": "icon-Strong",
+  "id": 9,
+  "mode": "rw",
+  "name": "吸力选择",
+  "property": {
+   "range": [
+    "close",
+    "gentle",
+    "normal",
+    "strong",
+    "max"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "cistern",
+  "iconname": "icon-dp_water",
+  "id": 10,
+  "mode": "rw",
+  "name": "水量选择",
+  "property": {
+   "range": [
+    "close",
+    "low",
+    "middle",
+    "high"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "seek",
+  "iconname": "icon-dp_magnifier",
+  "id": 11,
+  "mode": "rw",
+  "name": "寻找机器",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "direction_control",
+  "iconname": "icon-dp_compass",
+  "id": 12,
+  "mode": "rw",
+  "name": "方向",
+  "property": {
+   "range": [
+    "forward",
+    "backward",
+    "turn_left",
+    "turn_right",
+    "stop",
+    "exit",
+    "right_forward",
+    "left_forward"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "map_reset",
+  "iconname": "icon-dp_loop",
+  "id": 13,
+  "mode": "rw",
+  "name": "重置地图",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "path_data",
+  "iconname": "icon-dp_fly",
+  "id": 14,
+  "mode": "rw",
+  "name": "路径传输",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "command_trans",
+  "iconname": "icon-dp_fly",
+  "id": 15,
+  "mode": "rw",
+  "name": "指令传输",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "request",
+  "iconname": "icon-dp_mode",
+  "id": 16,
+  "mode": "rw",
+  "name": "请求数据",
+  "property": {
+   "range": [
+    "get_map",
+    "get_path",
+    "get_both"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "edge_brush_life",
+  "iconname": "icon-icon-percent",
+  "id": 17,
+  "mode": "rw",
+  "name": "边刷剩余寿命",
+  "property": {
+   "unit": "min",
+   "min": 0,
+   "max": 9000,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "edge_brush_life_reset",
+  "iconname": "icon-dp_loop",
+  "id": 18,
+  "mode": "rw",
+  "name": "边刷重置",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "roll_brush_life",
+  "iconname": "icon-icon-percent",
+  "id": 19,
+  "mode": "rw",
+  "name": "滚刷剩余寿命",
+  "property": {
+   "unit": "min",
+   "min": 0,
+   "max": 18000,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "roll_brush_life_reset",
+  "iconname": "icon-dp_loop",
+  "id": 20,
+  "mode": "rw",
+  "name": "滚刷重置",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "filter_life",
+  "iconname": "icon-dp_time2",
+  "id": 21,
+  "mode": "ro",
+  "name": "滤芯剩余寿命",
+  "property": {
+   "unit": "min",
+   "min": 0,
+   "max": 9000,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "filter_reset",
+  "iconname": "icon-dp_loop",
+  "id": 22,
+  "mode": "rw",
+  "name": "滤网重置",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "rag_life",
+  "iconname": "icon-icon-percent",
+  "id": 23,
+  "mode": "ro",
+  "name": "拖布剩余寿命",
+  "property": {
+   "unit": "min",
+   "min": 0,
+   "max": 9000,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "rag_life_reset",
+  "iconname": "icon-dp_loop",
+  "id": 24,
+  "mode": "rw",
+  "name": "拖布重置",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "do_not_disturb",
+  "iconname": "icon-dp_mode",
+  "id": 25,
+  "mode": "rw",
+  "name": "勿扰开关",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "volume_set",
+  "iconname": "icon-dp_voice",
+  "id": 26,
+  "mode": "rw",
+  "name": "音量设置",
+  "property": {
+   "unit": "%",
+   "min": 0,
+   "max": 100,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "break_clean",
+  "iconname": "icon-dp_wash",
+  "id": 27,
+  "mode": "rw",
+  "name": "断点续扫",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "fault",
+  "iconname": "icon-baojing",
+  "id": 28,
+  "mode": "rw",
+  "name": "故障告警",
+  "property": {
+   "label": [
+    "low_power",
+    "poweroff",
+    "wheel_trap",
+    "cannot_upgrade",
+    "collision_stuck",
+    "dust_station_full",
+    "tile_error",
+    "lidar_speed_err",
+    "lidar_cover",
+    "lidar_point_err",
+    "front_wall_dirty",
+    "psd_dirty",
+    "middle_sweep",
+    "side_sweep",
+    "fan_speed",
+    "dustbox_out",
+    "dustbox_full",
+    "no_dust_box",
+    "dustbox_fullout",
+    "trapped",
+    "pick_up",
+    "no_dust_water_box",
+    "water_box_empty",
+    "forbid_area",
+    "land_check",
+    "findcharge_fail",
+    "battery_err",
+    "kit_wheel",
+    "kit_lidar",
+    "kit_water_pump"
+   ],
+   "type": "bitmap",
+   "maxlen": 30
+  },
+  "scope": "fault",
+  "type": "obj"
+ },
+ {
+  "code": "clean_area_total",
+  "iconname": "icon-tongji2",
+  "id": 29,
+  "mode": "ro",
+  "name": "总清扫面积",
+  "property": {
+   "unit": "㎡",
+   "min": 0,
+   "max": 99999,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "clean_count_total",
+  "iconname": "icon-tongji2",
+  "id": 30,
+  "mode": "ro",
+  "name": "总清扫次数",
+  "property": {
+   "min": 0,
+   "max": 99999,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "clean_time_total",
+  "iconname": "icon-dp_time3",
+  "id": 31,
+  "mode": "ro",
+  "name": "总清扫时间",
+  "property": {
+   "unit": "min",
+   "min": 0,
+   "max": 99999,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "device_timer",
+  "iconname": "icon-dp_time2",
+  "id": 32,
+  "mode": "rw",
+  "name": "定时",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "disturb_time_set",
+  "iconname": "icon-dp_time3",
+  "id": 33,
+  "mode": "rw",
+  "name": "勿扰时间设置",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "device_info",
+  "iconname": "icon-dp_mode",
+  "id": 34,
+  "mode": "ro",
+  "name": "设备信息",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "voice_data",
+  "iconname": "icon-dp_mode",
+  "id": 35,
+  "mode": "rw",
+  "name": "语音包数据下发",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "language",
+  "iconname": "icon-dp_mode",
+  "id": 36,
+  "mode": "rw",
+  "name": "语音选择",
+  "property": {
+   "range": [
+    "chinese_simplified",
+    "chinese_traditional",
+    "english",
+    "german",
+    "french",
+    "russian",
+    "spanish",
+    "korean",
+    "latin",
+    "portuguese",
+    "japanese",
+    "italian"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "dust_collection_num",
+  "iconname": "icon-dp_wash",
+  "id": 37,
+  "mode": "rw",
+  "name": "集尘频率设置",
+  "property": {
+   "min": 0,
+   "max": 4,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "dust_collection_switch",
+  "iconname": "icon-dp_power2",
+  "id": 38,
+  "mode": "rw",
+  "name": "集尘宝",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "customize_mode_switch",
+  "iconname": "icon-dp_power2",
+  "id": 39,
+  "mode": "rw",
+  "name": "自定义模式",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "mop_state",
+  "id": 40,
+  "mode": "ro",
+  "name": "拖布状态",
+  "property": {
+   "range": [
+    "none",
+    "installed"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "work_mode",
+  "id": 41,
+  "mode": "rw",
+  "name": "扫拖模式",
+  "property": {
+   "range": [
+    "both_work",
+    "only_sweep",
+    "only_mop"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "unit_set",
+  "id": 42,
+  "mode": "rw",
+  "name": "单位设置",
+  "property": {
+   "range": [
+    "square_meter",
+    "square_foot"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "estimated_area",
+  "iconname": "icon-dp_mode",
+  "id": 43,
+  "mode": "ro",
+  "name": "全屋面积",
+  "property": {
+   "unit": "㎡",
+   "min": 0,
+   "max": 99999999,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "carpet_clean_prefer",
+  "iconname": "icon-dp_mode",
+  "id": 44,
+  "mode": "rw",
+  "name": "地毯清洁偏好",
+  "property": {
+   "range": [
+    "adaptive",
+    "evade",
+    "ignore"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "auto_boost",
+  "iconname": "icon-dp_up",
+  "id": 45,
+  "mode": "rw",
+  "name": "地毯增压",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "cruise_switch",
+  "iconname": "icon-dp_power2",
+  "id": 46,
+  "mode": "rw",
+  "name": "巡航",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "child_lock",
+  "iconname": "icon-dp_power2",
+  "id": 47,
+  "mode": "rw",
+  "name": "按键童锁",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "self_clean",
+  "iconname": "icon-dp_wash",
+  "id": 49,
+  "mode": "rw",
+  "name": "拖布自清洁",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "drying",
+  "iconname": "icon-jiare",
+  "id": 50,
+  "mode": "rw",
+  "name": "烘干开关",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "self_clean_frequency",
+  "iconname": "icon-dp_smile",
+  "id": 51,
+  "mode": "rw",
+  "name": "拖布自清洁频率",
+  "property": {
+   "unit": "㎡",
+   "min": 1,
+   "max": 10,
+   "scale": 0,
+   "step": 1,
+   "type": "value"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "self_clean_strength",
+  "iconname": "icon-dp_smile",
+  "id": 52,
+  "mode": "rw",
+  "name": "拖布自清洁强度",
+  "property": {
+   "range": [
+    "fast",
+    "daily",
+    "depth"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "land_strength",
+  "iconname": "icon-dp_smile",
+  "id": 53,
+  "mode": "rw",
+  "name": "擦地强度",
+  "property": {
+   "range": [
+    "slow",
+    "normal",
+    "fast"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "geofence_switch",
+  "id": 101,
+  "mode": "rw",
+  "name": "二次清扫",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "charge_type",
+  "id": 103,
+  "mode": "rw",
+  "name": "充电桩类型",
+  "property": {
+   "range": [
+    "seat",
+    "station"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "y_mop_switch",
+  "id": 104,
+  "mode": "rw",
+  "name": "Y字拖地",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "cleaning_way",
+  "id": 105,
+  "mode": "rw",
+  "name": "清洁模式",
+  "property": {
+   "range": [
+    "auto",
+    "clean_thoroughly",
+    "acrubbing",
+    "border",
+    "espiral",
+    "espiral_cuadrada"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "icons_to_robot",
+  "id": 106,
+  "mode": "wr",
+  "name": "icons状态",
+  "property": {
+   "range": [
+    "icon1",
+    "icon2",
+    "icon3",
+    "icon4",
+    "icon5",
+    "icon6",
+    "icon7",
+    "icon8",
+    "icon9",
+    "icon10",
+    "icon11",
+    "icon12",
+    "icon13",
+    "icon14",
+    "icon15",
+    "icon16",
+    "icon17",
+    "icon18",
+    "icon19",
+    "icon20",
+    "icon21",
+    "icon22",
+    "icon23",
+    "icon24",
+    "icon25",
+    "icon26",
+    "icon27",
+    "icon28",
+    "icon29",
+    "icon30"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "icons_to_app",
+  "id": 107,
+  "mode": "ro",
+  "name": "icons状态",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "sound_switch",
+  "id": 108,
+  "mode": "rw",
+  "name": "声音开关",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "quick_map",
+  "id": 109,
+  "mode": "rw",
+  "name": "快速建图",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "plan_icons",
+  "id": 110,
+  "mode": "rw",
+  "name": "预约计划高亮上报",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ },
+ {
+  "code": "status_unlock_game",
+  "id": 120,
+  "mode": "ro",
+  "name": "解锁游戏",
+  "property": {
+   "range": [
+    "map_unstable",
+    "twice_cleaning_unfinished",
+    "allow_play"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "message_report",
+  "id": 128,
+  "mode": "rw",
+  "name": "消息上报",
+  "property": {
+   "range": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30"
+   ],
+   "type": "enum"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "depth_clean",
+  "id": 142,
+  "mode": "rw",
+  "name": "深度清扫",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "alongwall_clean",
+  "id": 143,
+  "mode": "rw",
+  "name": "沿边清扫",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "spiral_clean",
+  "id": 144,
+  "mode": "rw",
+  "name": "螺旋清扫",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "square_clean",
+  "id": 145,
+  "mode": "rw",
+  "name": "方形螺旋清扫",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "findchgfanstatus",
+  "id": 146,
+  "mode": "rw",
+  "name": "回充风机开关",
+  "property": {
+   "type": "bool"
+  },
+  "type": "obj"
+ },
+ {
+  "code": "score_alluser",
+  "id": 147,
+  "mode": "rw",
+  "name": "游戏排行",
+  "property": {
+   "type": "raw",
+   "maxlen": 128
+  },
+  "type": "raw"
+ }
+]

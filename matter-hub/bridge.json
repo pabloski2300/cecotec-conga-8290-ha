@@ -1,0 +1,16 @@
+{
+  "name": "Conga",
+  "port": 5541,
+  "icon": "vacuum",
+  "countryCode": "ES",
+  "filter": {
+    "include": [{ "type": "pattern", "value": "vacuum.conga" }],
+    "exclude": [],
+    "includeMode": "any"
+  },
+  "featureFlags": {
+    "serverMode": true,
+    "vacuumOnOff": false,
+    "autoBatteryMapping": true
+  }
+}

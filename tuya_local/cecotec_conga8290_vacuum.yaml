@@ -1,0 +1,483 @@
+name: Robot vacuum
+products:
+  - id: kofl9ubyyyfznpxw
+    manufacturer: Cecotec
+    model: Conga 8290 Immortal Ultra Power
+entities:
+  - entity: vacuum
+    dps:
+      - id: 1
+        type: boolean
+        name: activate
+      - id: 2
+        type: boolean
+        name: pause_flag
+        optional: true
+        hidden: true
+      - id: 3
+        type: boolean
+        name: command
+        mapping:
+          - dps_val: true
+            value: return_to_base
+          - dps_val: false
+            value: no_return
+            hidden: true
+      - id: 5
+        type: string
+        name: status
+        mapping:
+          - dps_val: standby
+            value: standby
+          - dps_val: smart
+            value: cleaning
+          - dps_val: zone_clean
+            value: cleaning
+          - dps_val: part_clean
+            value: cleaning
+          - dps_val: select_room
+            value: cleaning
+          - dps_val: manual
+            value: cleaning
+          - dps_val: game
+            value: cleaning
+          - dps_val: mapping
+            value: mapping
+          - dps_val: paused
+            value: paused
+          - dps_val: goto_pos
+            value: cleaning
+          - dps_val: pos_arrived
+            value: cleaning
+          - dps_val: pos_unarrive
+            value: cleaning
+          - dps_val: goto_charge
+            value: returning
+          - dps_val: charging
+            value: charging
+          - dps_val: charge_done
+            value: charged
+          - dps_val: collecting_dust
+            value: docked
+          - dps_val: sleep
+            value: sleep
+      - id: 9
+        type: string
+        name: fan_speed
+        mapping:
+          - dps_val: close
+            value: "Off"
+          - dps_val: gentle
+            value: Gentle
+          - dps_val: normal
+            value: Normal
+          - dps_val: strong
+            value: Strong
+          - dps_val: max
+            value: Max
+      - id: 11
+        type: boolean
+        name: locate
+        optional: true
+      - id: 12
+        type: string
+        name: direction_control
+        optional: true
+        mapping:
+          - dps_val: forward
+            value: forward
+          - dps_val: backward
+            value: backward
+          - dps_val: turn_left
+            value: left
+          - dps_val: turn_right
+            value: right
+          - dps_val: stop
+            value: stop
+          - dps_val: exit
+            value: exit
+      - id: 28
+        type: bitfield
+        name: error
+  - entity: sensor
+    class: battery
+    dps:
+      - id: 8
+        type: integer
+        name: sensor
+        unit: "%"
+        class: measurement
+  - entity: select
+    name: Modo de limpieza
+    icon: "mdi:robot-vacuum"
+    dps:
+      - id: 4
+        type: string
+        name: option
+        mapping:
+          - dps_val: smart
+            value: Inteligente
+          - dps_val: zone
+            value: Zona
+          - dps_val: pose
+            value: Punto
+          - dps_val: select_room
+            value: Habitaciones
+          - dps_val: game
+            value: Juego
+            hidden: true
+          - dps_val: manual
+            value: Manual
+            hidden: true
+  - entity: select
+    translation_key: mopping
+    dps:
+      - id: 10
+        type: string
+        name: option
+        mapping:
+          - dps_val: close
+            value: "off"
+          - dps_val: low
+            value: low
+          - dps_val: middle
+            value: medium
+          - dps_val: high
+            value: high
+  - entity: select
+    translation_key: cleaning_mode
+    dps:
+      - id: 41
+        type: string
+        name: option
+        mapping:
+          - dps_val: both_work
+            value: sweep_and_mop
+          - dps_val: only_sweep
+            value: sweep
+          - dps_val: only_mop
+            value: mop
+  - entity: select
+    name: Alfombras
+    icon: "mdi:rug"
+    category: config
+    dps:
+      - id: 44
+        type: string
+        name: option
+        mapping:
+          - dps_val: adaptive
+            value: Adaptativo
+          - dps_val: evade
+            value: Evitar
+          - dps_val: ignore
+            value: Ignorar
+  - entity: select
+    name: Tipo de recorrido
+    icon: "mdi:vector-polyline"
+    category: config
+    dps:
+      - id: 105
+        type: string
+        name: option
+        mapping:
+          - dps_val: auto
+            value: Auto
+          - dps_val: clean_thoroughly
+            value: Profunda
+          - dps_val: acrubbing
+            value: Fregado
+          - dps_val: border
+            value: Bordes
+          - dps_val: espiral
+            value: Espiral
+          - dps_val: espiral_cuadrada
+            value: Espiral cuadrada
+  - entity: switch
+    name: Turbo en alfombras
+    icon: "mdi:rocket-launch"
+    category: config
+    dps:
+      - id: 45
+        type: boolean
+        name: switch
+  - entity: switch
+    name: Reanudar tras cargar
+    icon: "mdi:replay"
+    category: config
+    dps:
+      - id: 27
+        type: boolean
+        name: switch
+  - entity: switch
+    name: Modo personalizado
+    icon: "mdi:store-cog"
+    category: config
+    dps:
+      - id: 39
+        type: boolean
+        name: switch
+  - entity: switch
+    translation_key: do_not_disturb
+    category: config
+    dps:
+      - id: 25
+        type: boolean
+        name: switch
+  - entity: switch
+    translation_key: sound
+    category: config
+    dps:
+      - id: 108
+        type: boolean
+        name: switch
+  - entity: lock
+    translation_key: child_lock
+    category: config
+    dps:
+      - id: 47
+        type: boolean
+        name: lock
+  - entity: number
+    translation_key: volume
+    category: config
+    dps:
+      - id: 26
+        type: integer
+        name: value
+        unit: "%"
+        range:
+          min: 0
+          max: 100
+  - entity: number
+    name: Vaciados por limpieza
+    icon: "mdi:delete-restore"
+    category: config
+    dps:
+      - id: 37
+        type: integer
+        name: value
+        range:
+          min: 0
+          max: 4
+  - entity: button
+    name: Vaciar depósito
+    icon: "mdi:delete-empty"
+    dps:
+      - id: 38
+        type: boolean
+        name: button
+  - entity: binary_sensor
+    name: Mopa instalada
+    category: diagnostic
+    icon: "mdi:connection"
+    dps:
+      - id: 40
+        type: string
+        name: sensor
+        mapping:
+          - dps_val: installed
+            value: true
+          - dps_val: none
+            value: false
+  - entity: sensor
+    name: Tiempo de limpieza
+    class: duration
+    category: diagnostic
+    dps:
+      - id: 6
+        type: integer
+        name: sensor
+        unit: min
+  - entity: sensor
+    name: Área limpiada
+    class: area
+    category: diagnostic
+    dps:
+      - id: 7
+        type: integer
+        name: sensor
+        unit: m²
+  - entity: sensor
+    name: Área total limpiada
+    class: area
+    category: diagnostic
+    dps:
+      - id: 29
+        type: integer
+        name: sensor
+        unit: m²
+        class: total_increasing
+  - entity: sensor
+    name: Limpiezas totales
+    icon: "mdi:counter"
+    category: diagnostic
+    dps:
+      - id: 30
+        type: integer
+        name: sensor
+        class: total_increasing
+  - entity: sensor
+    name: Tiempo total de limpieza
+    class: duration
+    category: diagnostic
+    dps:
+      - id: 31
+        type: integer
+        name: sensor
+        unit: min
+        class: total_increasing
+  - entity: sensor
+    name: Vida cepillo lateral
+    class: duration
+    category: diagnostic
+    icon: "mdi:broom"
+    dps:
+      - id: 17
+        type: integer
+        name: sensor
+        unit: min
+  - entity: button
+    name: Reiniciar cepillo lateral
+    class: restart
+    category: config
+    dps:
+      - id: 18
+        type: boolean
+        name: button
+        optional: true
+  - entity: sensor
+    name: Vida cepillo central
+    class: duration
+    category: diagnostic
+    icon: "mdi:tire"
+    dps:
+      - id: 19
+        type: integer
+        name: sensor
+        unit: min
+  - entity: button
+    name: Reiniciar cepillo central
+    class: restart
+    category: config
+    dps:
+      - id: 20
+        type: boolean
+        name: button
+        optional: true
+  - entity: sensor
+    translation_key: filter_life
+    class: duration
+    category: diagnostic
+    dps:
+      - id: 21
+        type: integer
+        name: sensor
+        unit: min
+  - entity: button
+    translation_key: filter_reset
+    category: config
+    dps:
+      - id: 22
+        type: boolean
+        name: button
+        optional: true
+  - entity: sensor
+    name: Vida mopa
+    class: duration
+    category: diagnostic
+    dps:
+      - id: 23
+        type: integer
+        name: sensor
+        unit: min
+  - entity: button
+    name: Reiniciar mopa
+    class: restart
+    category: config
+    dps:
+      - id: 24
+        type: boolean
+        name: button
+        optional: true
+  - entity: binary_sensor
+    class: problem
+    category: diagnostic
+    dps:
+      - id: 28
+        type: bitfield
+        name: sensor
+        mapping:
+          - dps_val: 0
+            value: false
+          - value: true
+      - id: 28
+        type: bitfield
+        name: fault_code
+      - id: 28
+        type: bitfield
+        name: description
+        mapping:
+          - dps_val: 0
+            value: ok
+          - dps_val: 1
+            value: low_power
+          - dps_val: 2
+            value: poweroff
+          - dps_val: 4
+            value: wheel_trap
+          - dps_val: 8
+            value: cannot_upgrade
+          - dps_val: 16
+            value: collision_stuck
+          - dps_val: 32
+            value: dust_station_full
+          - dps_val: 64
+            value: tile_error
+          - dps_val: 128
+            value: lidar_speed_err
+          - dps_val: 256
+            value: lidar_cover
+          - dps_val: 512
+            value: lidar_point_err
+          - dps_val: 1024
+            value: front_wall_dirty
+          - dps_val: 2048
+            value: psd_dirty
+          - dps_val: 4096
+            value: middle_sweep
+          - dps_val: 8192
+            value: side_sweep
+          - dps_val: 16384
+            value: fan_speed
+          - dps_val: 32768
+            value: dustbox_out
+          - dps_val: 65536
+            value: dustbox_full
+          - dps_val: 131072
+            value: no_dust_box
+          - dps_val: 262144
+            value: dustbox_fullout
+          - dps_val: 524288
+            value: trapped
+          - dps_val: 1048576
+            value: pick_up
+          - dps_val: 2097152
+            value: no_dust_water_box
+          - dps_val: 4194304
+            value: water_box_empty
+          - dps_val: 8388608
+            value: forbid_area
+          - dps_val: 16777216
+            value: land_check
+          - dps_val: 33554432
+            value: findcharge_fail
+          - dps_val: 67108864
+            value: battery_err
+          - dps_val: 134217728
+            value: kit_wheel
+          - dps_val: 268435456
+            value: kit_lidar
+          - dps_val: 536870912
+            value: kit_water_pump
+          - value: multiple

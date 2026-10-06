@@ -1,0 +1,5 @@
+{
+  "entityId": "vacuum.conga",
+  "cleaningModeEntity": "select.conga_aspirar_o_fregar",
+  "mopIntensityEntity": "select.conga_fregado"
+}
