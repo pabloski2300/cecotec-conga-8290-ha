@@ -133,5 +133,5 @@ quedan en Home Assistant.
 
 ## Licencia
 
-MIT. El perfil se ofrece también para su inclusión en
-[make-all/tuya-local](https://github.com/make-all/tuya-local).
+MIT. El perfil se ha propuesto para su inclusión en
+[make-all/tuya-local](https://github.com/make-all/tuya-local/issues/6403) (issue #6403).

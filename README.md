@@ -34,8 +34,8 @@ Commands reach the robot in 1-2 seconds.
 
 ## 1. Install the tuya_local profile
 
-`tuya_local` has no profile for this product key yet (an English version is ready to be
-submitted upstream). Until it ships, copy
+`tuya_local` has no profile for this product key yet (support requested upstream in
+[make-all/tuya-local#6403](https://github.com/make-all/tuya-local/issues/6403)). Until it ships, copy
 [`tuya_local/cecotec_conga8290_vacuum.yaml`](tuya_local/cecotec_conga8290_vacuum.yaml) into:
 
 ```
@@ -135,4 +135,4 @@ the robot tile with its buttons, vacuum/mop, water, faults and dustbin emptying.
 ## License
 
 MIT. The profile is offered for inclusion in
-[make-all/tuya-local](https://github.com/make-all/tuya-local).
+[make-all/tuya-local](https://github.com/make-all/tuya-local) (issue #6403).
